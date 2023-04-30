@@ -13,6 +13,7 @@ public class Main_1043 {
     static boolean[] investigated, compromised;
 
     public static void main(String[] args) throws IOException {
+        // union-find solution : https://sohee-dev.tistory.com/75
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         N = Integer.parseInt(st.nextToken());
