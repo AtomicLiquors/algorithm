@@ -14,6 +14,7 @@ public class Solution {
     static boolean visited[][];
     static int[] dR = {0, 0, -1, 1};
     static int[] dC = {-1, 1, 0, 0};
+    static int totalCores;
     static List<int[]> list;
 
     public static void main(String[] args) throws IOException {
@@ -23,6 +24,7 @@ public class Solution {
             N = Integer.parseInt(br.readLine());
             visited = new boolean[N][N];
             result = Integer.MAX_VALUE;
+            totalCores = 0;
 
             list = new ArrayList<>();
             StringTokenizer st;
@@ -38,7 +40,7 @@ public class Solution {
                 }
             }
 
-            dfs(0, 0, visited);
+            dfs(0, 0, 0, visited);
 
             System.out.printf("#%d %d\n", tc, result);
         }
@@ -46,7 +48,7 @@ public class Solution {
 
     }
 
-    static void dfs(int total, int idx, boolean[][] status){
+    static void dfs(int total, int idx, int cores, boolean[][] status){
         if(total > result) return;
         int r = list.get(idx)[0];
         int c = list.get(idx)[1];
@@ -73,10 +75,16 @@ public class Solution {
                 measure++;
             }
             if(cancel) continue;
+
             if(idx+1 < listSize){
-                dfs(total + measure, idx+1, current);
+                dfs(total + measure, cores+1, idx+1, current);
             }else{
-                result = Math.min(result, total);
+                if(cores+1 > totalCores){
+                    result = total + measure;
+                    totalCores = cores + 1;
+                }else if(cores + 1 == totalCores){
+                    result = Math.min(result, total+measure);
+                }
             }
         }
     }
