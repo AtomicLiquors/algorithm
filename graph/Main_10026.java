@@ -1,10 +1,9 @@
 package graph;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Main_10026_failed {
+public class Main {
 
     static int N;
 
@@ -56,31 +55,7 @@ public class Main_10026_failed {
             if(nr < 0 || nc < 0 || nr >= N || nc >= N) continue;
             else if(visitedA[nr][nc]) continue;
 
-            if(mapA[nr][nc] == color){
-                dfsA(nr, nc, color);
-            } else {
-                System.out.println("checking");
-                System.out.println(nr);
-                System.out.println(nc);
-                System.out.println(mapA[nr][nc]);
-                int anr, anc;
-                boolean flag = true;
-                for (int j = 0; j < 4; j++) {
-                    anr = nr + dR[i];
-                    anc = nc + dC[i];
-                    if(anr < 0 || anc < 0 || anr >= N || anc >= N){
-                        flag = false;
-                        break;
-                    }
-                    System.out.println(mapA[anr][anc]);
-                    if(mapA[anr][anc] != color){
-                        System.out.println("rejected");
-                        flag = false;
-                        break;
-                    }
-                }
-                if(flag) dfsA(nr, nc, color);
-            }
+            if(mapA[nr][nc] == color) dfsA(nr, nc, color);
         }
     }
     static void dfsB(int r, int c, char color){
@@ -93,25 +68,8 @@ public class Main_10026_failed {
             if(nr < 0 || nc < 0 || nr >= N || nc >= N) continue;
             else if(visitedB[nr][nc]) continue;
 
-            if(mapB[nr][nc] == color){
-                dfsB(nr, nc, color);
-            } else {
-                int anr, anc;
-                boolean flag = true;
-                for (int j = 0; j < 4; j++) {
-                    anr = nr + dR[i];
-                    anc = nc + dC[i];
-                    if(anr < 0 || anc < 0 || anr >= N || anc >= N){
-                        flag = false;
-                        break;
-                    }
-                    else if(mapB[anr][anc] != color){
-                        flag = false;
-                        break;
-                    }
-                }
-                if(flag) dfsB(nr, nc, color);
-            }
+            if(mapB[nr][nc] == color) dfsB(nr, nc, color);
+            
         }
     }
 }
