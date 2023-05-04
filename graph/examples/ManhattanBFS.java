@@ -1,4 +1,4 @@
-public static void traverseByManhattanDistance(int[][] arr, int startX, int startY) {
+/*public static void traverseByManhattanDistance(int[][] arr, int startX, int startY) {
     // Define a 2D array to mark visited coordinates
     boolean[][] visited = new boolean[arr.length][arr[0].length];
 
@@ -45,3 +45,4 @@ public static void main(String[] args) {
     System.out.println("Test case 3:");
     traverseByManhattanDistance(arr, 2, 2);
 }
+*/
