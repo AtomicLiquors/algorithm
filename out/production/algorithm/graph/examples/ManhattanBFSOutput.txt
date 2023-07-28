@@ -1,0 +1,32 @@
+Test case 1:
+Visiting (0, 0)
+Visiting (1, 0)
+Visiting (0, 1)
+Visiting (2, 0)
+Visiting (1, 1)
+Visiting (0, 2)
+Visiting (2, 1)
+Visiting (1, 2)
+Visiting (2, 2)
+
+Test case 2:
+Visiting (1, 1)
+Visiting (0, 1)
+Visiting (1, 0)
+Visiting (2, 1)
+Visiting (1, 2)
+Visiting (0, 0)
+Visiting (0, 2)
+Visiting (2, 0)
+Visiting (2, 2)
+
+Test case 3:
+Visiting (2, 2)
+Visiting (2, 1)
+Visiting (1, 2)
+Visiting (2, 0)
+Visiting (1, 1)
+Visiting (0, 2)
+Visiting (0, 1)
+Visiting (1, 0)
+Visiting (0, 0)
